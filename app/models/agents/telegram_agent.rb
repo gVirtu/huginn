@@ -98,9 +98,9 @@ module Agents
     def configure_params(params)
       params[:chat_id] = interpolated['chat_id']
       params[:disable_notification] = interpolated['disable_notification'] if interpolated['disable_notification'].present?
+      params[:parse_mode] = interpolated['parse_mode'] if interpolated['parse_mode'].present?
       if params.has_key?(:text)
         params[:disable_web_page_preview] = interpolated['disable_web_page_preview'] if interpolated['disable_web_page_preview'].present?
-        params[:parse_mode] = interpolated['parse_mode'] if interpolated['parse_mode'].present?
       else
         params[:caption] = interpolated['caption'] if interpolated['caption'].present?
       end
